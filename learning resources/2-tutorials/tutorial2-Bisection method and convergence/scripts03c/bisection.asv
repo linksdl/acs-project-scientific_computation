@@ -27,7 +27,7 @@ x=(xL+xR)/2;
 f=feval(fnon,x);
 fprintf(' %3d %8.4g   %8.3g\n',k,x,f);
 xhist=zeros(maxk,1);
-
+xhist(0,:)=x;
 
 while (abs(xR-xL) > tol && k < maxk)
       
@@ -49,6 +49,7 @@ while (abs(xR-xL) > tol && k < maxk)
     x=(xL+xR)/2;
     f=feval(fnon,x);
     xhist(k,:)=x;
+    xhist=x;
     fprintf(' %3d %8.4g   %8.3g\n',k,x,f);
 end
 
