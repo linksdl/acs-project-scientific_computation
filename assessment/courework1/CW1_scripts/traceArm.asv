@@ -1,0 +1,18 @@
+function t = traceArm(nSteps, x0)
+
+    syms step_list x_list y_list theta_list phi_list 
+    step = 2 / (nSteps -1);
+    i = 1;
+    for t = -1:step:1
+        [locx, locy] = feval(@traceFun, t);
+        
+        [xx, f] = newtonSys2(@fun_arm, @Jfun_arm, x0, 1e-10, 100,locx,locy);
+        disp(xx(1,:));
+        row = {i, locx, locy, xx(1,:), xx(2,:)};
+        t = cat(1,t,row);
+        i = i + 1;
+    end
+    
+    t = table(step_list,x_list,y_list,theta_list,phi_list);
+        
+end
