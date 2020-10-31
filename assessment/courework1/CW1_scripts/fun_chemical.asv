@@ -1,0 +1,11 @@
+function f = fun_chemical(a)
+
+    %
+    %
+    %
+    %
+    syms k G V a0
+    f = [ (k*V/G)*a(1) .^2 ]
+
+
+end
