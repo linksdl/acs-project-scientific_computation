@@ -1,5 +1,18 @@
 function t_out = traceArm(traceFn,nSteps, x0)
-
+   
+    % Trace path of the free end of arm at at initial x0
+    % 
+    % function t_out = traceArm(traceFn,nSteps, x0)
+    % 
+    % Input: 
+    %    traceFn - the function  is to create the location (x,y)
+    %    nSteps  - the number of steps for t, to split the t
+    %    x0      - the init guess value for Newton method
+    %
+    % Output: 
+    %     t_out  - a table to recording the angles theta and phi at
+    % each step.
+    %
     
     step = 2 / (nSteps -1);
     i = 1;
