@@ -24,11 +24,11 @@ fprintf(' %3d   %8.3g\n',k,norm(f0));
 
 while( norm(f0)>tol && k<maxk )
     
-    J = feval(dfdx,x0,a, rho);    
+    J = feval(dfdx,x0);    
     
     k = k + 1;
     x = x0 - J\f0;
-    f = feval(fnon,x,a, rho);
+    f = feval(fnon,x);
     fprintf(' %3d   %8.3g\n',k,norm(f));
     
     x0 = x;

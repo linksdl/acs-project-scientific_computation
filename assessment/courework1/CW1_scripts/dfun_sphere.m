@@ -1,12 +1,16 @@
-function df_h = dfun_sphere(H)
+function df_h = dfun_sphere(H, a, rhos)
 
+   % The derivation funciton of nonlinear equations Fa,phos (H)
+   % 
+   % function df_h = dfun_sphere(H, a, rhos)
+   % 
+   % Input: H - a depth below the water surface
+   %        a - the radius of sphere, constant value
+   %        rhos - the density of sphere, constant value
    %
+   % Output: df_h - derivation function value 
    %
-   %
-   syms r_a rho_s;
-   r_a = 1;
-   % rho_s = 0.45;
-
-   df_h = 2*H*pi*r_a - pi*H.^2;
+   
+   df_h = 2*pi*a*H - pi * H.^2;
 
 end

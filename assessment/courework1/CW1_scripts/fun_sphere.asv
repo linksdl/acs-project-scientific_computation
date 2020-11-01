@@ -1,0 +1,11 @@
+function f_h = fun_sphere(H, a, rhos)
+
+   % The nonlinear equations Fa,
+   %
+   %
+   % W_w = pi * H.^2 * (a - H/3);
+   % W_s = 4/3 * pi * rho_s * a.^3
+   %
+   f_h = pi * H.^2 * (a - H/3) - 4/3 * pi * rhos * a.^3;
+   
+end
