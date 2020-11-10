@@ -34,8 +34,8 @@ for k=1:nStep
     t = t + dt;
     % Print the new estimate and function value.
     fprintf(' %4.2f %12.6f\n',t,norm(f) )
-    %plot([xkp(1) xk(1)], [xkp(2) xk(2)], 'ok-', 'LineWidth', 2)
-    %pause
+    plot([xkp(1) xk(1)], [xkp(2) xk(2)], 'ok-', 'LineWidth', 2)
+    pause
 end
 
 end

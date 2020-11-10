@@ -36,8 +36,8 @@ while (normf>tol) && (it<maxIt)
   % Print the new estimate and function value.
   fprintf(' %d %12.6f\n',it,normf)
   
-  %plot([xkp(1) xk(1)], [xkp(2) xk(2)], 'ok-', 'LineWidth', 2)
-  %pause
+  plot([xkp(1) xk(1)], [xkp(2) xk(2)], 'ok-', 'LineWidth', 2)
+  pause
 end
 
 if( it==maxIt)
