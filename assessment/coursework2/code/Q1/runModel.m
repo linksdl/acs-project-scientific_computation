@@ -39,8 +39,12 @@ for k = 1:nt
     t = k*dt;
     fprintf('Time %f\n',t);
     
+%    [u{k},f,iter(k)] = newtonAlgorithm(@residual, u0, 1e-8, ...
+%@fdJacobian, @linearSolve, 10);
+
     [u{k},f,iter(k)] = newtonAlgorithm(@residual, u0, 1e-8, ...
-                        @fdJacobian, @linearSolve, 10);
+@tridiagonalJacobian, @sparseThomas, 10);
+
     u0 = u{k};
 end
 toc
