@@ -1,0 +1,16 @@
+function [x, f]  = myNewton1(fnon, dfdx, x0, tol, maxk)
+
+
+x = x0;
+
+
+while (norm(f) > tol && )
+    
+
+end
+
+end
+
+
+
+
