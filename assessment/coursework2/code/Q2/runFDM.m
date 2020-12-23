@@ -31,10 +31,11 @@ tic; % start a timer
 %  @linearSolve - a function that solves the linear system J.d=-f
 
 %[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @fdJacobian, @linearSolve, 40 );
+[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @buildJacobian, @linearSolve, 40 );
 %[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @fdJacobian, @matlabLinearSolve, 40 );
 
 %[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @fdJacobian, @linearSolve, 40 );
-[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @tridiagonalJacobian, @sparseThomas, 40 );
+%[ u,f,iter ] = newtonAlgorithm( @fdm3D, u0, 1e-8, @tridiagonalJacobian, @sparseThomas, 40 );
 
 Trun = toc; % overall time taken
 
@@ -46,6 +47,8 @@ v(2:m-1,2:m-1,2:m-1) = reshape(u,[m-2 m-2 m-2]);
 slice(x,y,z,v, [-3 3],1,-4);
 colorbar;
 
+
+spy(A)
 %[L,U,P] = lu(A)
 
 %figure(2)

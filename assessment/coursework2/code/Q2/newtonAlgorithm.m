@@ -38,7 +38,7 @@ while( norm(f)>tol && iter<maxIts )                    % test for convergence
   f = feval( systemFunction, x );                      % new function values
   
   % Print the iteration number and function norm.
-  fprintf(' %d %18.12f\n',iter,1 )
+  fprintf(' %d %18.12f\n',iter,norm(f))
   
 end
 
