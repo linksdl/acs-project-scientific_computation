@@ -1,5 +1,8 @@
 function y = cantilever(x,def)
 
+% def = 0.6 
+% fzero(@(x)cantilever(x, def), 0.6)
+%
 % function y = cantilever(x,def)
 %
 % Evaluate the nonlinear function for the cantilever beam example.

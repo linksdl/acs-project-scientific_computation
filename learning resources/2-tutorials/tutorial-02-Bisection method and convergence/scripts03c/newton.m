@@ -1,5 +1,5 @@
 
-function [x,f] = newton( fnon, dfdx, x0, tol, maxk )
+function [x,f,xhist] = newton( fnon, dfdx, x0, tol, maxk )
 
 % function [x,f] = myNewton( fnon, dfdx, x0, tol, maxk )
 % Classic Newton Method for F(x)=0 
@@ -17,6 +17,7 @@ k = 0;
 x = x0;
 f = feval(fnon,x);
 fprintf(' %3d %8.4g %8.3g\n',k,x,f);
+xhist=zeros(maxk,1);
 
 while( norm(f)>tol && k<maxk )
     
@@ -25,6 +26,9 @@ while( norm(f)>tol && k<maxk )
     k = k + 1;
     x = x - f/d;
     f = feval(fnon,x);
+    
+    xhist(k,:)=x;
+    
     fprintf(' %3d %8.4g %8.3g\n',k,x,f);
     
 end

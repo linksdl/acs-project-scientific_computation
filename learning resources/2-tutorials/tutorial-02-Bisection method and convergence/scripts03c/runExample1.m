@@ -1,14 +1,14 @@
 clc
 
 % BISECTION
-disp('Bisection method:')
+disp('Bisection method:');
 [x,f,xhist] = bisection(@example1,0,2,1e-12,100);
 
 % Plot the convergence history
-figure(1)
-semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2)
-xlabel('Iteration i')
-ylabel('Error |x^* - x_i|')
+figure(1);
+semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2);
+xlabel('Iteration i');
+ylabel('Error |x^* - x_i|');
 
 % NEWTON
 disp(' ')
@@ -17,13 +17,13 @@ disp('Newton method:')
 
 % Convergence order test
 error = abs(sqrt(2) - xhist);
-alpha = error(2:end) ./ error(1:end-1).^1
+alpha = error(2:end) ./ error(1:end-1).^1;
 
 % Plot the convergence history
 figure(2)
-semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2)
-xlabel('Iteration i')
-ylabel('Error |x^* - x_i|')
+semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2);
+xlabel('Iteration i');
+ylabel('Error |x^* - x_i|');
 
 
 % SECANT
@@ -33,10 +33,10 @@ disp('Secant method:')
 
 % Convergence order test
 error = abs(sqrt(2) - xhist);
-alpha = error(2:end) ./ error(1:end-1).^(1.618)
+alpha = error(2:end) ./ error(1:end-1).^(1.618);
 
 % Plot the convergence history
 figure(3)
-semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2)
-xlabel('Iteration i')
-ylabel('Error |x^* - x_i|')
+semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2);
+xlabel('Iteration i');
+ylabel('Error |x^* - x_i|');
