@@ -15,7 +15,7 @@ spec_radius = eigs(Bfun,N,1);
 
 fprintf('Norm of iteration matrix ||B|| = %1.3f\n', abs(spec_radius))
 
-if (abs(spec_radius) >= 1)
+if (abs(spec_radius) > 1)
     error('Spectral norm of iteration matrix ||B|| > 1.')
 end
 
