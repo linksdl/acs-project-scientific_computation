@@ -32,7 +32,7 @@ disp('Secant method:')
 % Convergence order test
 error = abs(sqrt(2) - xhist);
 alpha = error(2:end) ./ error(1:end-1).^(1.618);
-
+fprintf(alpha)
 % Plot the convergence history
 figure(3)
 semilogy(abs(sqrt(2) - xhist),'o-','LineWidth',2)
